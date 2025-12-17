@@ -1,32 +1,34 @@
+// docs/docusaurus.config.ts
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics',
-  tagline: 'Comprehensive textbook for Physical AI and Humanoid Robotics course',
+  tagline: 'Bridging the gap between the digital brain and the physical body',
   favicon: 'img/favicon.ico',
 
-  // Production URL for your site
-  url: 'https://ayesha1130.github.io',
-  // Base URL for GitHub Pages deployment (exact repo name)
-  baseUrl: '/Physical-AI-Humanoid-Robotics/',
+  // Set the production url of your site here
+  url: 'https://github.com/',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  baseUrl: '/',
 
-  // GitHub Pages deployment config
-  organizationName: 'Ayesha1130',
-  projectName: 'Physical-AI-Humanoid-Robotics',
+  // GitHub pages deployment config.
+  organizationName: 'Ayesha Iqbal',
+  projectName: 'physical-ai-and-humanoid-robotics',
 
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
-
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ur'],
+    locales: ['en'],
   },
 
+  // Custom fields for API configuration (used in your hooks)
   customFields: {
     apiUrl: process.env.REACT_APP_API_URL || 'https://ai-rative-book-backend-production.up.railway.app',
     apiKey: process.env.REACT_APP_API_KEY || '',
@@ -38,29 +40,35 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/Ayesha1130/Physical-AI-Humanoid-Robotics/tree/main/docs/',
+          // Please change this to your repo.
+          editUrl: 'https://github.com/Ayesha1130',
         },
-        blog: false,
+        blog: false, // Blog disabled as per textbook structure
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/css/custom.css', // Points to your new Modern Theme
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
+    // Replace with your project's social card
     image: 'img/social-card.jpg',
+    
+    // We handle dark mode toggle in the UserProfileButton, 
+    // but we keep respectPrefersColorScheme true
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
+      disableSwitch: true, 
       respectPrefersColorScheme: true,
     },
+
     navbar: {
       title: 'Physical AI',
       logo: {
         alt: 'Physical AI Logo',
-        src: 'img/ai-logo.svg',
+        // Yahan humne naya logo link kar diya hai
+        src: 'img/ai-logo.svg', 
       },
       items: [
         {
@@ -74,34 +82,59 @@ const config: Config = {
           label: 'Modules',
           position: 'left',
           items: [
-            {label: 'Module 1: ROS 2 Fundamentals', to: '/docs/module1/week1-intro-physical-ai'},
-            {label: 'Module 2: Gazebo Simulation', to: '/docs/module2/week6-gazebo'},
-            {label: 'Module 3: NVIDIA Isaac', to: '/docs/module3/week8-isaac'},
-            {label: 'Module 4: Conversational Robotics', to: '/docs/module4/week13-conversational-robotics'},
+            {
+              label: 'Module 1: ROS 2 Fundamentals',
+              to: '/docs/module1/week1-intro-physical-ai',
+            },
+            {
+              label: 'Module 2: Gazebo Simulation',
+              to: '/docs/module2/week6-gazebo',
+            },
+            {
+              label: 'Module 3: NVIDIA Isaac',
+              to: '/docs/module3/week8-isaac',
+            },
+            {
+              label: 'Module 4: Conversational Robotics',
+              to: '/docs/module4/week13-conversational-robotics',
+            },
           ],
         },
+        // GitHub link is handled via CSS in your custom theme or can be added here
         {
-          href: 'https://github.com/Ayesha1130/Physical-AI-Humanoid-Robotics',
+          href: 'https://github.com/Ayesha1130',
           label: 'GitHub',
           position: 'right',
         },
       ],
     },
     footer: {
-      style: 'light',
+      style: 'light', // Matches your modern theme better
       links: [
         {
           title: 'Course Material',
           items: [
-            {label: 'Introduction', to: '/docs'},
-            {label: 'ROS 2 Setup', to: '/docs/module1/week1-intro-physical-ai'},
+            {
+              label: 'Introduction',
+              to: '/docs',
+            },
+            {
+              label: 'ROS 2 Setup',
+              to: '/docs/module1/week1-intro-physical-ai',
+            },
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'Ayesha1130 GitHub', href: 'https://github.com/Ayesha1130'},
-            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/ayesha-iqbal-2613402b4/'},
+            {
+              label: 'Ayesha1130 GitHub',
+              href: 'https://github.com/Ayesha1130',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/ayesha-iqbal-2613402b4/',
+            },
           ],
         },
         {
@@ -109,7 +142,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Repository',
-              href: 'https://github.com/Ayesha1130/Physical-AI-Humanoid-Robotics',
+              href: 'https://github.com/Ayesha1130',
             },
           ],
         },
